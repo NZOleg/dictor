@@ -17,8 +17,8 @@ class Db
     {
         $this->dbh = new \PDO('mysql:host=localhost;dbname=dictor','root','');
     }
-    public function add(){
-
+    public function add(Models\Translation $translation ){
+        $sql = '';
     }
     public function query(string $query, array $params = [],string $class){
         $sth = $this->dbh->prepare($query);

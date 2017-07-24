@@ -1,3 +1,4 @@
 <?php
 require 'autoload.php';
-$db = \App\Db::instance();
+$trans =  new \App\Models\Translation('a','b','c','d');
+$trans::findAll();
