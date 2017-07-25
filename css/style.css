@@ -1,0 +1,12 @@
+.navbar-right{
+     padding-right: 2rem;
+ }
+
+
+.divider_row{
+    border-bottom:1px solid #aaa; margin-bottom:10px;
+}
+
+.even_tab .divider_row:last-child{
+    border-bottom:none;
+}

@@ -42,6 +42,8 @@ class Translation extends Model
     }
     public function isNew()
     {
+        if (self::findByWord($this->origWord) !== null)
+            return false;
         return true;
     }
     public static function findByWord(string $word){
