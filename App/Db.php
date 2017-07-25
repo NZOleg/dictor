@@ -22,7 +22,9 @@ class Db
     }
     public function query(string $query, array $params = [],string $class){
         list($sth, $res) = $this->execute($query, $params);
+
         if (false ==! $res){
+
             return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
         }
         return null;

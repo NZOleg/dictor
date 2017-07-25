@@ -23,12 +23,17 @@ class Translation extends Model
     public $transLang;
 
 
-    public function __construct(string $origWord, string $origLang, string $transWord, string $transLang)
+
+
+    public function __construct(string $origWord = null, string $origLang = null, string $transWord = null, string $transLang = null)
     {
-        $this->origWord = $origWord;
-        $this->origLang = $origLang;
-        $this->transWord = $transWord;
-        $this->transLang = $transLang;
+        //when \PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, it calls constructor without arguments
+        if (isset($origWord)) {
+            $this->origWord = $origWord;
+            $this->origLang = $origLang;
+            $this->transWord = $transWord;
+            $this->transLang = $transLang;
+        }
     }
 
     public function save()
@@ -38,5 +43,10 @@ class Translation extends Model
     public function isNew()
     {
         return true;
+    }
+    public static function findByWord(string $word){
+        $db = Db::instance();
+        $res = $db->query('SELECT * FROM '. static::TABLE . ' WHERE origWord=:word', [':word' => $word], static::class);
+        return $res == [] ? null : $res;
     }
 }

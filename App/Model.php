@@ -17,11 +17,11 @@ abstract class Model
 
     public static function findAll(){
         $db = Db::instance();
-        $db->query('SELECT * FROM'. static::TABLE, [], static::class);
+        return $db->query('SELECT * FROM '. static::TABLE, [], static::class);
     }
     public static function findById(int $id){
         $db = Db::instance();
-        $db->query('SELECT * FROM'. static::TABLE . ' WHERE id=:id', [':id' => $id], static::class);
+        return $db->query('SELECT * FROM '. static::TABLE . ' WHERE id=:id', [':id' => $id], static::class);
     }
 
     public function insert(){
@@ -38,7 +38,6 @@ abstract class Model
         }
         $sql = 'INSERT INTO '. static::TABLE . ' ('. implode(', ',$columns) . ' ) VALUES( '. implode(', ',array_keys($values)) . ' )';
         $db = Db::instance();
-        var_dump($sql);
         list (, $res) = $db->execute($sql, $values);
     }
 
