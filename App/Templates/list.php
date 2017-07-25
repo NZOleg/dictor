@@ -1,64 +1,43 @@
 <div class="container even_tab">
     <div class="row divider_row">
 
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <h4 class="text-center">Date</h4>
+        <div class="col-md-2 col-sm-4 col-xs-4">
+            <h4 class="text-center">1</h4>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <h4 class="text-center">Event</h4>
+        <div class="col-md-3 col-sm-4 col-xs-4">
+            <h4 class="text-center">2</h4>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <h4 class="text-center">Registration</h4>
+        <div class="col-md-2 col-sm-4 col-xs-4">
+            <h4 class="text-center">3</h4>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-4">
+            <h4 class="text-center">4</h4>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-4">
+            <h4 class="text-center">5</h4>
         </div>
     </div>
 
+    <?php foreach ($words as $k => $v): ?>
     <div class="row divider_row ">
 
-        <div class="col-md-4 col-sm-4 col-xs-4 text-center">
-            11 - 12 March 2017
+        <div class="col-md-2 col-sm-4 col-xs-4">
+            <h4 class="text-center"><?=$v->id?></h4>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            Anatomy of True North Alignment: 2 Day Yoga Anatomy Training
+        <div class="col-md-3 col-sm-4 col-xs-4">
+            <h4 class="text-center"><?=$v->origWord?></h4>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <button class="btn btn-default btn-sm center-block">Register</button>
+        <div class="col-md-2 col-sm-4 col-xs-4">
+            <h4 class="text-center"><?=$v->origLang?></h4>
         </div>
-    </div>
-    <div class="row divider_row ">
-
-        <div class="col-md-4 col-sm-4 col-xs-4 text-center">
-            11 - 12 March 2017
+        <div class="col-md-3 col-sm-4 col-xs-4">
+            <h4 class="text-center"><?=$v->transWord?></h4>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            Anatomy of True North Alignment: 2 Day Yoga Anatomy Training
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <button class="btn btn-default btn-sm center-block">Register</button>
-        </div>
-    </div>		<div class="row divider_row ">
-
-        <div class="col-md-4 col-sm-4 col-xs-4 text-center">
-            11 - 12 March 2017
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            Anatomy of True North Alignment: 2 Day Yoga Anatomy Training
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <button class="btn btn-default btn-sm center-block">Register</button>
-        </div>
-    </div>		<div class="row divider_row ">
-
-        <div class="col-md-4 col-sm-4 col-xs-4 text-center">
-            11 - 12 March 2017
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            Anatomy of True North Alignment: 2 Day Yoga Anatomy Training
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <button class="btn btn-default btn-sm center-block">Register</button>
+        <div class="col-md-2 col-sm-4 col-xs-4">
+            <h4 class="text-center"><?=$v->transLang?></h4>
         </div>
     </div>
-
+    <?php endforeach; ?>
 
 
 
