@@ -23,8 +23,25 @@ abstract class Model
         $db = Db::instance();
         $db->query('SELECT * FROM'. static::TABLE . ' WHERE id=:id', [':id' => $id], static::class);
     }
-    abstract public function isNew();
-    public static function insert(Model $obj){
-        $obj->isNew();
+
+    public function insert(){
+        if (!$this->isNew()){
+            return ;
+        }
+        $columns = [];
+        $values = [];
+        foreach ($this as $k => $v){
+            if ($k == 'id')
+                continue;
+            $columns[] =  $k;
+            $values[':'.$k] = $v;
+        }
+        $sql = 'INSERT INTO '. static::TABLE . ' ('. implode(', ',$columns) . ' ) VALUES( '. implode(', ',array_keys($values)) . ' )';
+        $db = Db::instance();
+        var_dump($sql);
+        list (, $res) = $db->execute($sql, $values);
     }
+
+    abstract public function isNew();
+
 }

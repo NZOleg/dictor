@@ -21,11 +21,15 @@ class Db
         $sql = '';
     }
     public function query(string $query, array $params = [],string $class){
-        $sth = $this->dbh->prepare($query);
-        $res = $sth->execute($params);
+        list($sth, $res) = $this->execute($query, $params);
         if (false ==! $res){
             return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
         }
         return null;
+    }
+    public function execute(string $query, array $params = []){
+        $sth = $this->dbh->prepare($query);
+        $res = $sth->execute($params);
+        return [$sth, $res];
     }
 }

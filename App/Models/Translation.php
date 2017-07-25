@@ -14,7 +14,7 @@ use App\Model;
 
 class Translation extends Model
 {
-    const TABLE = '';
+    const TABLE = 'words';
 
     public $id;
     public $origWord;
@@ -34,5 +34,9 @@ class Translation extends Model
     public function save()
     {
 
+    }
+    public function isNew()
+    {
+        return true;
     }
 }
