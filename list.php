@@ -1,7 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: NZOle
- * Date: 24/07/2017
- * Time: 10:38 AM
- */
+
+include 'autoload.php';
+
+
+$view = new \App\View();
+$view->words = \App\Models\Translation::findAll();
+
+
+$view->display('Templates/list.php');

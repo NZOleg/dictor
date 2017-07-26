@@ -39,6 +39,7 @@ abstract class Model
         $sql = 'INSERT INTO '. static::TABLE . ' ('. implode(', ',$columns) . ' ) VALUES( '. implode(', ',array_keys($values)) . ' )';
         $db = Db::instance();
         list (, $res) = $db->execute($sql, $values);
+        return $res;
     }
 
     abstract public function isNew();

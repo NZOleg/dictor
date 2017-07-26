@@ -10,3 +10,6 @@
 .even_tab .divider_row:last-child{
     border-bottom:none;
 }
+.submit{
+    margin-top: 2rem;
+}

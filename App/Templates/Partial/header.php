@@ -35,9 +35,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="add.php">Add New</a></li>
-            <li><a href="../list.php">List</a></li>
+<!--            <li class="active"><a href="index.php">Home</a></li>-->
+<!--            <li><a href="add.php">Add New</a></li>-->
+<!--            <li><a href="list.php">List</a></li>-->
+            <?php
+                foreach (\App\Constants::PAGES as $page=>$label){
+                    if ($page == 'about')
+                        continue;
+                    echo '<li';
+                    if ($page === basename($_SERVER['REQUEST_URI'], '.php'))
+                        echo ' class="active"';
+                    echo '><a href="'.$page.'.php">'.$label.'</a></li>';
+                }
+            ?>
         </ul>
         <div class="col-sm-3 col-md-3">
             <form class="navbar-form" role="search">
@@ -50,7 +60,7 @@
             </form>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="about.php">About</a></li>
+            <li<?='about' === basename($_SERVER['REQUEST_URI'])?' class="active"':''?>><a href="about.php">About</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
