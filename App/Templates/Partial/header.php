@@ -60,7 +60,7 @@
             </form>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li<?='about' === basename($_SERVER['REQUEST_URI'])?' class="active"':''?>><a href="about.php">About</a></li>
+            <li<?=('about' === basename($_SERVER['REQUEST_URI'], '.php'))?' class="active"':''?>><a href="about.php">About</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
