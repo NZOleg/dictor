@@ -13,3 +13,9 @@
 .submit{
     margin-top: 2rem;
 }
+list ul li{
+    list-style: none;
+}
+.list ul li:before{
+    content:"• ";
+}

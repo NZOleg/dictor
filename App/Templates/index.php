@@ -1,4 +1,4 @@
-<div class="container even_tab" >
+<div class="container" >
     <div class="col-md-6">
         <h2>Last Records</h2>
         <div class="row divider_row">
@@ -44,5 +44,15 @@
         <?php endforeach; ?>
     </div>
 
-    <div class="col-md-6"></div>
+    <div class="col-md-6 text-center list">
+        <h2>App's Features</h2>
+        <ul>
+            <li>Feature 1</li>
+            <li>Feature 2</li>
+            <li>Feature 3</li>
+            <li>Feature 4</li>
+            <li>Feature 5</li>
+            <li>Feature 6</li>
+        </ul>
+    </div>
 </div>
